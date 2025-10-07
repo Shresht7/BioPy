@@ -128,6 +128,31 @@ class DNASequence:
         """Transcribes this DNA Sequence into RNA"""
         return self.sequence.replace('T', 'U')
 
+    def translate(self):
+        """Translates an mRNA sequence into a list of amino acids"""
+        amino_acids = []
+
+        mrna = self.transcribe()
+        mrna = mrna.upper()
+
+        # Find the start codon
+        start_index = mrna.find("AUG")
+        if start_index == -1:
+            return [] # No start codon found.
+        
+        # Read codons in triplets from the start
+        for i in range(start_index, len(mrna), 3):
+            codon = mrna[i:i+3]
+            if len(codon) < 3:
+                break # Incomplete codon at the end?
+            amino_acid = CODON_TABLE.get(codon, '???')
+            if amino_acid == "*":
+                break
+
+            amino_acids.append(amino_acid)
+        
+        return "".join(amino_acids)
+
     def __len__(self):
         """Returns the length of the DNA Sequence"""
         return len(self.sequence)
@@ -137,3 +162,49 @@ class DNASequence:
 
     def __str__(self):
         return self.sequence
+
+
+CODON_TABLE = {
+    # Phenylalanine (F)
+    "UUU": "F", "UUC": "F",
+    # Leucine (L)
+    "UUA": "L", "UUG": "L", "CUU": "L", "CUC": "L", "CUA": "L", "CUG": "L",
+    # Isoleucine (I)
+    "AUU": "I", "AUC": "I", "AUA": "I",
+    # Methionine (M) - Start codon
+    "AUG": "M",
+    # Valine (V)
+    "GUU": "V", "GUC": "V", "GUA": "V", "GUG": "V",
+    # Serine (S)
+    "UCU": "S", "UCC": "S", "UCA": "S", "UCG": "S", "AGU": "S", "AGC": "S",
+    # Proline (P)
+    "CCU": "P", "CCC": "P", "CCA": "P", "CCG": "P",
+    # Threonine (T)
+    "ACU": "T", "ACC": "T", "ACA": "T", "ACG": "T",
+    # Alanine (A)
+    "GCU": "A", "GCC": "A", "GCA": "A", "GCG": "A",
+    # Tyrosine (Y)
+    "UAU": "Y", "UAC": "Y",
+    # Histidine (H)
+    "CAU": "H", "CAC": "H",
+    # Glutamine (Q)
+    "CAA": "Q", "CAG": "Q",
+    # Asparagine (N)
+    "AAU": "N", "AAC": "N",
+    # Lysine (K)
+    "AAA": "K", "AAG": "K",
+    # Aspartic Acid (D)
+    "GAU": "D", "GAC": "D",
+    # Glutamic Acid (E)
+    "GAA": "E", "GAG": "E",
+    # Cysteine (C)
+    "UGU": "C", "UGC": "C",
+    # Tryptophan (W)
+    "UGG": "W",
+    # Arginine (R)
+    "CGU": "R", "CGC": "R", "CGA": "R", "CGG": "R", "AGA": "R", "AGG": "R",
+    # Glycine (G)
+    "GGU": "G", "GGC": "G", "GGA": "G", "GGG": "G",
+    # Stop codons
+    "UAA": "*", "UAG": "*", "UGA": "*"
+}
