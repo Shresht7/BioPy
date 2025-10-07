@@ -72,7 +72,7 @@ class DNASequence:
         return seq
 
     @staticmethod
-    def random(length: int = 12):
+    def random(length = 12):
         """Generates a random DNA sequence of given length"""
         seq = [random.choice(BASES) for _ in range(length)]
         return DNASequence("".join(seq))
@@ -118,11 +118,15 @@ class DNASequence:
         print(f"   {connector}   ")
         print(f"3' {bottom} 5'")
 
-    def hamming_distance(self, other: DNASequence) -> int:
+    def hamming_distance(self, other) -> int:
         """Compare two sequences of equal length"""
         if len(self.sequence) != len(other.sequence):
             raise ValueError("Sequences must be of equal length")
         return sum(a != b for a, b in zip(self.sequence, other.sequence))
+
+    def transcribe(self):
+        """Transcribes this DNA Sequence into RNA"""
+        return self.sequence.replace('T', 'U')
 
     def __len__(self):
         """Returns the length of the DNA Sequence"""
