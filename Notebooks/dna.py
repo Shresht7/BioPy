@@ -208,3 +208,32 @@ CODON_TABLE = {
     # Stop codons
     "UAA": "*", "UAG": "*", "UGA": "*"
 }
+
+def transcribe(sequence: str):
+    """Transcribes this DNA Sequence into RNA"""
+    return sequence.replace('T', 'U')
+
+def translate(sequence: str):
+    """Translates an mRNA sequence into a list of amino acids"""
+    amino_acids = []
+
+    mrna = transcribe(sequence)
+    mrna = mrna.upper()
+
+    # Find the start codon
+    start_index = mrna.find("AUG")
+    if start_index == -1:
+        return [] # No start codon found.
+    
+    # Read codons in triplets from the start
+    for i in range(start_index, len(mrna), 3):
+        codon = mrna[i:i+3]
+        if len(codon) < 3:
+            break # Incomplete codon at the end?
+        amino_acid = CODON_TABLE.get(codon, '???')
+        if amino_acid == "*":
+            break
+
+        amino_acids.append(amino_acid)
+    
+    return "".join(amino_acids)
