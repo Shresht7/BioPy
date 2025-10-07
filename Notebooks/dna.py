@@ -64,14 +64,14 @@ class DNASequence:
         self.sequence = DNASequence.clean(sequence)
         self.validate() # Ensure that the DNA sequence is valid
 
-    @classmethod
-    def clean(self, seq: str) -> str:
+    @staticmethod
+    def clean(seq: str) -> str:
         seq = seq.replace("\n", "")
         seq = seq.replace(" ", "")
         seq = seq.upper()
         return seq
 
-    @classmethod
+    @staticmethod
     def random(length: int = 12):
         """Generates a random DNA sequence of given length"""
         seq = [random.choice(BASES) for _ in range(length)]
@@ -117,6 +117,12 @@ class DNASequence:
         print(f"5' {top} 3'")
         print(f"   {connector}   ")
         print(f"3' {bottom} 5'")
+
+    def hamming_distance(self, other: DNASequence) -> int:
+        """Compare two sequences of equal length"""
+        if len(self.sequence) != len(other.sequence):
+            raise ValueError("Sequences must be of equal length")
+        return sum(a != b for a, b in zip(self.sequence, other.sequence))
 
     def __len__(self):
         """Returns the length of the DNA Sequence"""
