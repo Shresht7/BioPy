@@ -1,4 +1,4 @@
-# BioPy
+# 🧬 BioPy
 
 Python and Bioinformatics fundamentals.
 
@@ -36,7 +36,8 @@ To install all requirements
 pip install --upgrade -r requirements.txt
 ```
 
->[!NOTE] To save the dependencies run: `pip freeze > requirements.txt`
+>[!NOTE]
+> To save the dependencies run: `pip freeze > requirements.txt`
 
 ---
 
