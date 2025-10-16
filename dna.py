@@ -127,7 +127,7 @@ class DNASequence:
             start_pos: Position to start the translation (0, 1, or 2 for reading frames)
 
         Returns:
-            Amino aci sequence as string
+            Amino acid sequence as string
         """
         # First transcribe to RNA
         rna = self.transcribe()
