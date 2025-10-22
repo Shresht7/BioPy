@@ -1,0 +1,44 @@
+# STOCKHOLM 1.0
+#=GF ID   AbfS_sensor
+#=GF AC   PF18225.8
+#=GF DE   Sensor histidine kinase (AbfS) sensor domain
+#=GF AU   Smart A;0000-0002-6965-5633
+#=GF SE   ECOD:EUF03465
+#=GF GA   26.00 26.00;
+#=GF TC   26.10 26.50;
+#=GF NC   25.10 25.90;
+#=GF BM   hmmbuild  HMM.ann SEED.ann
+#=GF SM   hmmsearch -Z 90746521 -E 1000 --cpu 8 HMM pfamseq
+#=GF TP   Domain
+#=GF CL   CL0183
+#=GF RN   [1]
+#=GF RM   18922794
+#=GF RT   Regulation of the xylan-degrading apparatus of Cellvibrio
+#=GF RT   japonicus by a novel two-component system.
+#=GF RA   Emami K, Topakas E, Nagy T, Henshaw J, Jackson KA, Nelson KE,
+#=GF RA   Mongodin EF, Murray JW, Lewis RJ, Gilbert HJ;
+#=GF RL   J Biol Chem. 2009;284:1086-1096.
+#=GF DR   INTERPRO; IPR041124;
+#=GF DR   SO; 0000417; polypeptide_domain;
+#=GF CC   This is the sensor domain of sensor histidine kinase (AbfS)
+#=GF CC   present in Cellvibrio japonicus. AbfS forms part of the AbfR/S
+#=GF CC   two-component system which is needed to to activate the
+#=GF CC   expression of the suite of enzymes that remove the numerous side
+#=GF CC   chains from xylan. The overall fold of the sensor domain is that
+#=GF CC   of a classical Per Arndt Sim domain [1]. This domain binds
+#=GF CC   xylotriose and xylobiose (Matilla et.al, FEMS Microbiology
+#=GF CC   Reviews, fuab043, 45, 2021, 1.
+#=GF CC   https://doi.org/10.1093/femsre/fuab043).
+#=GF SQ   5
+#=GS B3PFT7_CELJU/62-126      AC B3PFT7.1
+#=GS K4KEM7_SIMAS/61-125      AC K4KEM7.1
+#=GS B7RZ31_9GAMM/59-123      AC B7RZ31.1
+#=GS A0A143HL37_MICTH/57-121  AC A0A143HL37.1
+#=GS A0A0X3UC67_9GAMM/57-121  AC A0A0X3UC67.1
+B3PFT7_CELJU/62-126                 AINRNTQQLTQDLRAMPNWSLRFVYIVDRNNQDLLKRPLPPGIMVLAPRLTAKHPYDKVQDRNRK
+K4KEM7_SIMAS/61-125                 AVNATEREFTERIRTLPHWARRNVFVLDSQGFEIFDRELPSPVADLMRKLDLDRPFKKLERKNRT
+B7RZ31_9GAMM/59-123                 MQNTPAERLPAIIEKAKSKHDINVWLLDRQGRDLLEQRVPAKVATVANQLRGRKRRAFARHREGP
+A0A143HL37_MICTH/57-121             ARRHGQEYFQQWLERQPKKVKEQVFAVDQFGRELLGRPLPEDMAPMLIALNYRNRESHAQVDKKP
+A0A0X3UC67_9GAMM/57-121             TRRHGPESFRFWLERQPVEARDRIYAIDRSGAEILDRPIPRGMAPLFKVLSFRNREDQGLVNNKP
+#=GC seq_cons                       ApN+ssEpFsphLE+tPscu+cpVallDRpGpELL-RPLPsslAsLhppLshR+Rcc+upc+N+P
+//
