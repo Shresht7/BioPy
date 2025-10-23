@@ -2,6 +2,16 @@
 
 Python and Bioinformatics fundamentals.
 
+---
+
+## 📕 References
+
+- [rosalind.info](https://rosalind.info/problems/locations/)
+- [YouTube Playlist: BioInformatics in Python - rebelScience](https://www.youtube.com/playlist?list=PLpSOMAcxEB_jUKMvdl8rHqNiZXFIrtd5G)
+- [YouTube: Bioinformatics with Biopython - Lana Dominkovic](https://www.youtube.com/watch?v=ocA2IMe7dpA)
+
+---
+
 ## Code
 
 ### Virtual Environment
