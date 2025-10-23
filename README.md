@@ -1,4 +1,4 @@
-# 🧬 BioPy
+# 🧬 Learning BioInformatics
 
 Python and Bioinformatics fundamentals.
 
