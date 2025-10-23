@@ -2,6 +2,9 @@
 
 Python and Bioinformatics fundamentals.
 
+> [!CAUTION]
+> **DO NOT** take any of this work seriously. I am inept at Biology. Proceed with extreme skepticism.
+
 ---
 
 ## 📕 References
