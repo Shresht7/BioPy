@@ -3,7 +3,7 @@
 Python and Bioinformatics fundamentals.
 
 > [!CAUTION]
-> **DO NOT** take any of this work seriously. I am inept at Biology. Proceed with extreme skepticism.
+> **DO NOT** take any of this work seriously. I am inept at Biology, and asked LLMs for help. Proceed with extreme skepticism.
 
 ---
 
