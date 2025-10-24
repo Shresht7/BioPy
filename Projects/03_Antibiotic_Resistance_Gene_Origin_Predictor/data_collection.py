@@ -52,13 +52,13 @@ class DataCollector:
         if resistance_types is None:
             # Focus on major antibiotic resistance classes
             resistance_types = [
-                'beta-lactam',
-                'aminoglycoside',
-                'fluoroquinolone',
-                'tetracycline',
-                'macrolide',
-                'sulfonamide',
-                'trimethoprim'
+                "BLA", # 'beta-lactam',
+                "AMG", # 'aminoglycoside',
+                "FLO", # 'fluoroquinolone',
+                "TET", # 'tetracycline',
+                "MAC", # 'macrolide',
+                "SLF", # 'sulfonamide',
+                "TMP", # 'trimethoprim'
             ]
 
         print(f"Filtering resistance genes from {input_fasta}...")
@@ -72,7 +72,7 @@ class DataCollector:
                 description = record.description.lower()
 
                 # Check if any resistance type is in description
-                if any(rt in description for rt in resistance_types):
+                if any(rt.lower() in description for rt in resistance_types):
                     filtered_records.append(record)
 
             print(f"Found {len(filtered_records)} resistance genes out of {total} total")
